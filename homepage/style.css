@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: #0f1419;
+  color: #e1e8ed;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.subtitle {
+  color: #8b98a5;
+  font-size: 1.3rem;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-item {
+  background-color: #1a1f29;
+  border: 1px solid #2d3748;
+  border-radius: 12px;
+  padding: 32px 36px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.nav-item:hover img {
+  opacity: 1;
+}
+
+.nav-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(30, 64, 175, 0.15) 70%,
+    rgba(37, 99, 235, 0.2) 100%
+  );
+  transition: right 0.5s ease;
+  z-index: 1;
+}
+
+.nav-item:hover::before {
+  right: 0;
+}
+
+.nav-item:hover {
+  border-color: #1e40af;
+  transform: translateX(8px);
+}
+
+.nav-content {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-item h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.nav-item:hover h2 {
+    color: rgb(10, 94, 189);
+    text-shadow:
+    /* first layer (tight black) */
+    1px 0px 1px black,
+    -1px 0px 1px black,
+    0px 1px 1px black,
+    0px -1px 1px black,
+    
+    /* second layer (soft) */
+    1px 0px 10px rgba(0, 0, 0, 0.6),
+    -1px 0px 10px rgba(0, 0, 0, 0.6),
+    0px 1px 10px rgba(0, 0, 0, 0.6),
+    0px -1px 10px rgba(0, 0, 0, 0.6);
+}
+
+.nav-item p {
+  color: #8b98a5;
+  font-size: 1.25rem;
+}
+
+.nav-item:hover p {
+    color: rgb(11, 80, 160);
+    text-shadow:
+    /* first layer (tight black) */
+    1px 0px 0.5px black,
+    -1px 0px 0.5px black,
+    0px 1px 0.5px black,
+    0px -1px 0.5px black,
+
+    /* second layer (soft) */
+    1px 0px 5px rgba(0, 0, 0, 0.4),
+    -1px 0px 5px rgba(0, 0, 0, 0.4),
+    0px 1px 5px rgba(0, 0, 0, 0.4),
+    0px -1px 5px rgba(0, 0, 0, 0.4);
+}
